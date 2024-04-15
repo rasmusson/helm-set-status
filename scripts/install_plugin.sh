@@ -9,7 +9,7 @@ os_arch=$(uname -sp | tr '[:upper:] ' '[:lower:]-' | sed 's/x86_64/amd64/')
 release_file="helm-set-status-${os_arch}.tgz"
 url="https://github.com/k3s-io/helm-set-status/releases/download/v${SET_STATUS_VERSION}/${release_file}"
 
-mkdir -p ${dir}
+mkdir -p ${HELM_PLUGIN_DIR}
 
 if command -v wget; then
   wget -qO - ${url} | tar -zxvC ${HELM_PLUGIN_DIR}
